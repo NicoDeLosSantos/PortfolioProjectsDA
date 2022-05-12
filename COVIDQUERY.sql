@@ -4,10 +4,6 @@ From PortfolioProject1..CovidDeaths
 where continent is not null
 order by 3,4
 
---Select *
---From PortfolioProject1..CovidVaccinations
---order by 3,4
---Selec data que voy a usar despues
 
 Select Location, date, total_cases, new_cases, total_deaths, population
 From PortfolioProject1..CovidDeaths
