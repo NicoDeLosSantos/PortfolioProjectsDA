@@ -63,25 +63,5 @@ Where continent is not null
 order by 1,2
 
 
-
--- Total Population
----  !! ARREGLAR !!! 
-
-
---With PopvsVac (Continent, Location, Date, Population, New_Vaccination, TotalVacunados)
---as
---(
---Select dea.continent, dea.location, dea.date, dea.population, vac.new_vaccinations, SUM(vac.new_vaccinations) 
---OVER (Partition by dea.location Order by dea.location, dea.Date) as TotalVacunados
---From PortfolioProject1..CovidDeaths dea
---Join PortfolioProject1..CovidVaccinations vac
---	On dea.location = vac.location
---	and dea.date = vac.date
---Where dea.continent is not null
---Order by 2, 3
---)
---Select *, (TotalVacunados/Population)*100
---From PopvsVac
-
 --END
 
