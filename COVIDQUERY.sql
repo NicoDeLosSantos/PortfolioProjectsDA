@@ -4,12 +4,6 @@ From PortfolioProject1..CovidDeaths
 where continent is not null
 order by 3,4
 
-
-Select Location, date, total_cases, new_cases, total_deaths, population
-From PortfolioProject1..CovidDeaths
-where continent is not null
-order by 1,2
-
 -- Comparando Total Cases vs Population--
 -- Muestra el porcentaje de la poblacion con COVID
 Select Location, date, total_cases, total_deaths, (total_cases/population)*100 as tienen_covid
@@ -47,6 +41,12 @@ From PortfolioProject1..CovidDeaths
 Where continent is not null
 Group by continent
 order by TotalMuertes desc
+
+
+Select Location, date, total_cases, new_cases, total_deaths, population
+From PortfolioProject1..CovidDeaths
+where continent is not null
+order by 1,2
 
 
 --Totalde casos, muertes y Porcentaje de muerte por dia en el mundo
