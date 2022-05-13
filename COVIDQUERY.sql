@@ -10,14 +10,6 @@ From PortfolioProject1..CovidDeaths
 where continent is not null
 order by 1,2
 
--- Comparando Total de casos vs Total deaths
--- Porcentaje de muerte de personas que contrajeron covid (Argentina)
-Select Location, date, total_cases, total_deaths, (total_deaths/total_cases)*100 as DeathPorcentage
-From PortfolioProject1..CovidDeaths
-Where location like '%Argen%'
-and continent is not null
-order by 1,2
-
 -- Comparando Total Cases vs Population--
 -- Muestra el porcentaje de la poblacion con COVID
 Select Location, date, total_cases, total_deaths, (total_cases/population)*100 as tienen_covid
@@ -32,6 +24,14 @@ From PortfolioProject1..CovidDeaths
 where continent is not null
 Group by location, population
 order by PorcentajeInfectados desc
+
+-- Comparando Total de casos vs Total deaths
+-- Porcentaje de muerte de personas que contrajeron covid (Argentina)
+Select Location, date, total_cases, total_deaths, (total_deaths/total_cases)*100 as DeathPorcentage
+From PortfolioProject1..CovidDeaths
+Where location like '%Argen%'
+and continent is not null
+order by 1,2
 
 --Muestra TotalMuertes ordenados por el pais con mayores muertes
 Select Location, MAX(cast(total_deaths as int)) as TotalMuertes
